@@ -18,4 +18,5 @@
 		ref="messageServiceImpl" version="${dubbo.interface.version}"/>
 	<dubbo:service interface="cn.mldn.mldndubbo.service.IDeptService" 
 		ref="deptServiceImpl" version="${dubbo.interface.version}"/>
+		
 </beans>

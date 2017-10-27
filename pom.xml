@@ -322,5 +322,6 @@
 	<modules>
 		<module>mldndubbo-api</module>
 		<module>mldndubbo-provider</module>
+		<module>mldndubbo-consumer</module>
 	</modules>
 </project>
