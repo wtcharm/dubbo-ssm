@@ -18,5 +18,6 @@
 		ref="messageServiceImpl" version="${dubbo.interface.version}"/>
 	<dubbo:service interface="cn.mldn.mldndubbo.service.IDeptService" 
 		ref="deptServiceImpl" version="${dubbo.interface.version}"/>
-		
+	<!-- 配置Dubbo监控程序的监控地址 -->
+	<dubbo:monitor address="${dubbo.monitor.address}"/>
 </beans>

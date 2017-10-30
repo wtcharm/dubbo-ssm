@@ -1,5 +1,7 @@
 package cn.mldn.mldndubbo.consumer.test;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -15,7 +17,7 @@ public class TestMessageService {
 	@Resource
 	private IMessageService messageService ;
 	@Test
-	public void testEcho() {
+	public void testEcho() throws Exception {
 		String echo = this.messageService.echo("www.mldn.cn") ;
 		System.err.println(echo);
 	}
