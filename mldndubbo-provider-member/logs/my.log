@@ -382,3 +382,32 @@ Caused by: com.alibaba.dubbo.remoting.RemotingException: message can not send, b
 	... 17 more
 2017-10-30 15:00:19,978 WARN [com.alibaba.dubbo.remoting.transport.AbstractServer] -  [DUBBO] All clients has discontected from /192.168.28.87:9329. You can graceful shutdown now., dubbo version: 2.5.6, current host: 192.168.28.87
 2017-10-30 15:00:19,979 INFO [com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol] -  [DUBBO] disconected from /192.168.28.87:2816,url:dubbo://192.168.28.87:9329/cn.mldn.mldndubbo.service.IMemberService?anyhost=true&application=mldn-service&channel.readonly.sent=true&codec=dubbo&default.dispatcher=all&default.threadpool=fixed&default.threads=64&default.timeout=10000000&default.token=true&dubbo=2.5.6&generic=false&heartbeat=60000&interface=cn.mldn.mldndubbo.service.IMemberService&methods=getRoleAndActionByMember,get&monitor=dubbo%3A%2F%2F192.168.68.135%3A7070%3Fdubbo%3D2.5.6%26interface%3Dcom.alibaba.dubbo.monitor.MonitorService%26pid%3D6604%26timestamp%3D1509346572973&pid=6604&revision=dev&side=provider&timestamp=1509346572888&version=dev, dubbo version: 2.5.6, current host: 192.168.28.87
+2017-10-30 15:01:11,501 INFO [com.alibaba.dubbo.monitor.dubbo.DubboMonitor] -  [DUBBO] Send statistics to monitor dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&dubbo=2.5.6&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973, dubbo version: 2.5.6, current host: 192.168.28.87
+2017-10-30 15:01:11,502 ERROR [com.alibaba.dubbo.monitor.dubbo.DubboMonitor] -  [DUBBO] Unexpected error occur at send statistic, cause: Failed to invoke remote method: collect, provider: dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&dubbo=2.5.6&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973, cause: message can not send, because channel is closed . url:dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973, dubbo version: 2.5.6, current host: 192.168.28.87
+com.alibaba.dubbo.rpc.RpcException: Failed to invoke remote method: collect, provider: dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&dubbo=2.5.6&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973, cause: message can not send, because channel is closed . url:dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:102)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:54)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:69)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.collect(proxy0.java)
+	at com.alibaba.dubbo.monitor.dubbo.DubboMonitor.send(DubboMonitor.java:113)
+	at com.alibaba.dubbo.monitor.dubbo.DubboMonitor$1.run(DubboMonitor.java:70)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.alibaba.dubbo.remoting.RemotingException: message can not send, because channel is closed . url:dubbo://192.168.68.135:7070/com.alibaba.dubbo.monitor.MonitorService?check=false&cluster=failsafe&codec=dubbo&dubbo=2.5.6&heartbeat=60000&interface=com.alibaba.dubbo.monitor.MonitorService&pid=6604&reference.filter=-monitor&timestamp=1509346572973
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.send(AbstractClient.java:256)
+	at com.alibaba.dubbo.remoting.transport.AbstractPeer.send(AbstractPeer.java:54)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeChannel.request(HeaderExchangeChannel.java:112)
+	at com.alibaba.dubbo.remoting.exchange.support.header.HeaderExchangeClient.request(HeaderExchangeClient.java:88)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.ReferenceCountExchangeClient.request(ReferenceCountExchangeClient.java:78)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:97)
+	... 17 more
