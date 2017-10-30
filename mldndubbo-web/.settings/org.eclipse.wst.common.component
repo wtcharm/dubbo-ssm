@@ -2,12 +2,9 @@
     <wb-module deploy-name="mldndubbo-web">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/profiles/dev"/>
-        <dependent-module archiveName="mldndubbo-api-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mldndubbo-api/mldndubbo-api">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="mldndubbo-web"/>
         <property name="java-output-path" value="/mldndubbo-web/target/classes"/>
     </wb-module>
