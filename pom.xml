@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.mldn</groupId>
@@ -12,6 +13,8 @@
 
 	<properties>
 		<mldndubbo.version>0.0.1</mldndubbo.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
 		<shiro.version>1.3.2</shiro.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<profiles.dir>src/main/profiles</profiles.dir>
@@ -49,6 +52,26 @@
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>jstl</artifactId>
@@ -429,6 +452,7 @@
 		<module>mldndubbo-api</module>
 		<module>mldndubbo-provider</module>
 		<module>mldndubbo-consumer</module>
-    <module>mldndubbo-provider-member</module>
-  </modules>
+		<module>mldndubbo-provider-member</module>
+		<module>mldndubbo-web</module>
+	</modules>
 </project>
