@@ -8,7 +8,7 @@ import cn.mldn.mldndubbo.service.IMessageService;
 public class MessageServiceImpl implements IMessageService {
 	@Override
 	public String echo(String str) {
-		return "【ECHO】" + str;
+		return "【ECHO】" + str + "｛" + Thread.currentThread().getName() + "｝";
 	}
 
 }
